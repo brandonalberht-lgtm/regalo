@@ -1,0 +1,393 @@
+
+:root {
+    --rosa: #ff8fab;
+    --rosa-claro: #ffe5ec;
+    --lila: #cdb4db;
+    --fondo: #fff0f5;
+    --oscuro: #74476a;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #ffe5ec,
+        #f3d9fa,
+        #dceeff
+    );
+    font-family: "VT323", monospace;
+    color: var(--oscuro);
+    overflow-x: hidden;
+}
+
+/* PANTALLAS */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 15px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.screen.active {
+    display: flex;
+    animation: aparecer 0.6s ease;
+}
+
+/* VENTANA RETRO */
+
+.window {
+    width: 100%;
+    max-width: 650px;
+    background: #fffafd;
+    border: 4px solid var(--oscuro);
+    box-shadow: 8px 8px 0 #b784ad;
+}
+
+.window-header {
+    background: var(--lila);
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid var(--oscuro);
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.window-content {
+    text-align: center;
+    padding: 35px 22px;
+}
+
+/* TEXTOS */
+
+h1 {
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(15px, 4vw, 24px);
+    color: #ed719a;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 34px;
+    color: #b45d94;
+}
+
+p {
+    font-size: 25px;
+    line-height: 1.3;
+}
+
+.small-text {
+    font-size: 21px;
+}
+
+/* BOTONES */
+
+button {
+    font-family: "Press Start 2P", monospace;
+    background: var(--rosa);
+    color: white;
+    padding: 17px 20px;
+    border: 3px solid var(--oscuro);
+    box-shadow: 5px 5px 0 var(--oscuro);
+    font-size: 10px;
+    line-height: 1.8;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin: 15px 5px;
+    max-width: 100%;
+}
+
+button:hover {
+    background: #fb709b;
+    transform: translateY(-3px);
+}
+
+button:active {
+    box-shadow: 1px 1px 0 var(--oscuro);
+    transform: translate(4px, 4px);
+}
+
+/* CORAZON PRINCIPAL */
+
+.pixel-heart {
+    font-size: 110px;
+    color: #ff628f;
+    text-shadow: 6px 6px 0 #b94a80;
+    animation: latido 1.2s infinite;
+}
+
+/* SOBRE */
+
+.envelope {
+    display: inline-block;
+    font-size: 110px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    color: #ed719a;
+}
+
+.envelope:hover {
+    transform: scale(1.15) rotate(-8deg);
+}
+
+/* CARTA */
+
+.letter {
+    background: #fff4de;
+    border: 3px dashed #e7b78e;
+    padding: 24px;
+    margin: 20px auto;
+    max-width: 450px;
+    box-shadow: 5px 5px 0 #e6c6af;
+    animation: aparecer 0.6s;
+}
+
+.letter h3 {
+    font-size: 31px;
+    color: #c5688e;
+}
+
+.letter p {
+    font-size: 24px;
+}
+
+/* CORAZONES */
+
+.hearts-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.heart-button {
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    background: #ff9fbd;
+    animation: flotar 2s infinite alternate;
+}
+
+.heart-button:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.heart-button:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.heart-button:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.heart-button:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.heart-button.descubierto {
+    background: #cba2d9;
+}
+
+#mensaje-razon {
+    min-height: 85px;
+    padding: 20px;
+    background: #ffe4ed;
+    border: 3px solid #d99ab9;
+    font-size: 26px;
+}
+
+/* PASTEL PIXEL ART */
+
+.cake {
+    height: 220px;
+    width: 220px;
+    margin: 40px auto;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+.cake-bottom {
+    position: absolute;
+    width: 190px;
+    height: 90px;
+    bottom: 0;
+    left: 15px;
+    background: #ff94b6;
+    border: 5px solid #aa5c7e;
+    box-shadow: inset 0 -20px #e773a0;
+}
+
+.cake-top {
+    position: absolute;
+    width: 190px;
+    height: 38px;
+    bottom: 75px;
+    left: 15px;
+    background: #fff0f5;
+    border: 5px solid #aa5c7e;
+    z-index: 2;
+}
+
+.candle {
+    position: absolute;
+    width: 18px;
+    height: 55px;
+    background: #b99bea;
+    border: 4px solid #8666b8;
+    bottom: 108px;
+    left: 101px;
+}
+
+.flame {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: #ffc44d;
+    bottom: 169px;
+    left: 100px;
+    box-shadow: inset -6px 0 #ff7b54;
+    animation: fuego 0.5s infinite alternate;
+}
+
+/* ESTRELLAS DECORATIVAS */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    animation: brillar 2s infinite alternate;
+}
+
+/* CONFETI */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 10px;
+    z-index: 20;
+    pointer-events: none;
+    animation: caer 4s linear forwards;
+}
+
+/* UTILIDADES */
+
+.hidden {
+    display: none !important;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.13);
+    }
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fuego {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.85) rotate(5deg);
+    }
+}
+
+@keyframes brillar {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes caer {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    .window-content {
+        padding: 25px 13px;
+    }
+
+    .window-header {
+        font-size: 8px;
+    }
+
+    .heart-button {
+        width: 52px;
+        height: 55px;
+        font-size: 28px;
+    }
+
+    .pixel-heart {
+        font-size: 85px;
+    }
+
+    p {
+        font-size: 23px;
+    }
+
+    .letter {
+        padding: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
