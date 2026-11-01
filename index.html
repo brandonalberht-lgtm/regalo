@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para mi niña ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="stars" id="stars"></div>
+
+    <!-- PANTALLA DE BIENVENIDA -->
+    <section id="inicio" class="screen active">
+
+        <div class="window">
+
+            <div class="window-header">
+                <span>♡ UN REGALITO PARA TI ♡</span>
+                <span>✕</span>
+            </div>
+
+            <div class="window-content">
+
+                <div class="pixel-heart">♥</div>
+
+                <h1>Feliz cumpleaños</h1>
+
+                <h2>Mi niña bonita ♡</h2>
+
+                <p>
+                    Preparé algo muy especial para ti...
+                </p>
+
+                <p class="small-text">
+                    ¿Estás lista para descubrirlo?
+                </p>
+
+                <button onclick="mostrarPantalla('carta')">
+                    COMENZAR ♡
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CARTA -->
+    <section id="carta" class="screen">
+
+        <div class="window">
+
+            <div class="window-header">
+                <span>♡ MENSAJE ESPECIAL ♡</span>
+                <span>✕</span>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Tienes una cartita 💌</h2>
+
+                <div class="envelope" onclick="abrirCarta()">
+                    ✉
+                </div>
+
+                <p id="instruccion">
+                    Presiona el sobre para abrirlo
+                </p>
+
+                <div id="contenido-carta" class="hidden">
+
+                    <div class="letter">
+
+                        <h3>Para mi amor ♡</h3>
+
+                        <p>
+                            Hoy es un día muy especial,
+                            porque es el cumpleaños de
+                            una personita que amo muchísimo.
+                        </p>
+
+                        <p>
+                            Quiero agradecerte por cada
+                            sonrisa, cada momento y
+                            cada recuerdo bonito que
+                            hemos compartido.
+                        </p>
+
+                        <p>
+                            Espero que este pequeño
+                            regalo te recuerde cuánto
+                            te amo.
+                        </p>
+
+                        <p>
+                            Feliz cumpleaños, princesa.
+                            ♡
+                        </p>
+
+                    </div>
+
+                    <button onclick="mostrarPantalla('razones')">
+                        CONTINUAR ♡
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CORAZONES INTERACTIVOS -->
+    <section id="razones" class="screen">
+
+        <div class="window">
+
+            <div class="window-header">
+                <span>♡ COSITAS QUE AMO DE TI ♡</span>
+                <span>✕</span>
+            </div>
+
+            <div class="window-content">
+
+                <h2>¿Sabes por qué te amo?</h2>
+
+                <p>
+                    Toca cada corazoncito ♡
+                </p>
+
+                <div class="hearts-container">
+
+                    <button class="heart-button"
+                        onclick="mostrarRazon(0, this)">♥</button>
+
+                    <button class="heart-button"
+                        onclick="mostrarRazon(1, this)">♥</button>
+
+                    <button class="heart-button"
+                        onclick="mostrarRazon(2, this)">♥</button>
+
+                    <button class="heart-button"
+                        onclick="mostrarRazon(3, this)">♥</button>
+
+                    <button class="heart-button"
+                        onclick="mostrarRazon(4, this)">♥</button>
+
+                </div>
+
+                <div id="mensaje-razon">
+                    Cada corazón esconde algo especial.
+                </div>
+
+                <p id="contador">0 / 5 corazones</p>
+
+                <button id="btn-final"
+                    class="hidden"
+                    onclick="mostrarPantalla('final')">
+                    TU SORPRESA FINAL ♡
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CUMPLEAÑOS -->
+    <section id="final" class="screen">
+
+        <div class="window">
+
+            <div class="window-header">
+                <span>♡ HAPPY BIRTHDAY ♡</span>
+                <span>✕</span>
+            </div>
+
+            <div class="window-content">
+
+                <h1>Feliz cumpleaños ♡</h1>
+
+                <div class="cake">
+                    <div class="flame" id="flame"></div>
+                    <div class="candle"></div>
+                    <div class="cake-top"></div>
+                    <div class="cake-bottom"></div>
+                </div>
+
+                <p>
+                    Pide un deseo, mi amor...
+                </p>
+
+                <button onclick="apagarVela()">
+                    SOPLAR VELITA ♡
+                </button>
+
+                <div id="mensaje-final" class="hidden">
+
+                    <h2>¡Te amo muchísimo! ♡</h2>
+
+                    <p>
+                        Que la vida te regale
+                        tantos momentos bonitos
+                        como los que tú me regalas.
+                    </p>
+
+                    <p>
+                        Gracias por existir.
+                    </p>
+
+                    <button onclick="reiniciar()">
+                        VOLVER AL INICIO ♡
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
