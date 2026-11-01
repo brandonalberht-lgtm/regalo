@@ -1,4 +1,8 @@
 
+/* ========================================
+   REGALO DE CUMPLEAÑOS - PIXEL ART ♡
+======================================== */
+
 :root {
     --rosa: #ff8fab;
     --rosa-claro: #ffe5ec;
@@ -26,7 +30,9 @@ body {
     overflow-x: hidden;
 }
 
-/* PANTALLAS */
+/* ========================================
+   PANTALLAS
+======================================== */
 
 .screen {
     display: none;
@@ -43,7 +49,9 @@ body {
     animation: aparecer 0.6s ease;
 }
 
-/* VENTANA RETRO */
+/* ========================================
+   VENTANAS RETRO
+======================================== */
 
 .window {
     width: 100%;
@@ -69,7 +77,9 @@ body {
     padding: 35px 22px;
 }
 
-/* TEXTOS */
+/* ========================================
+   TEXTOS
+======================================== */
 
 h1 {
     font-family: "Press Start 2P", monospace;
@@ -92,7 +102,9 @@ p {
     font-size: 21px;
 }
 
-/* BOTONES */
+/* ========================================
+   BOTONES PIXEL ART
+======================================== */
 
 button {
     font-family: "Press Start 2P", monospace;
@@ -119,7 +131,9 @@ button:active {
     transform: translate(4px, 4px);
 }
 
-/* CORAZON PRINCIPAL */
+/* ========================================
+   CORAZÓN PRINCIPAL
+======================================== */
 
 .pixel-heart {
     font-size: 110px;
@@ -128,7 +142,9 @@ button:active {
     animation: latido 1.2s infinite;
 }
 
-/* SOBRE */
+/* ========================================
+   SOBRE Y CARTA
+======================================== */
 
 .envelope {
     display: inline-block;
@@ -141,8 +157,6 @@ button:active {
 .envelope:hover {
     transform: scale(1.15) rotate(-8deg);
 }
-
-/* CARTA */
 
 .letter {
     background: #fff4de;
@@ -163,7 +177,9 @@ button:active {
     font-size: 24px;
 }
 
-/* CORAZONES */
+/* ========================================
+   CORAZONES INTERACTIVOS
+======================================== */
 
 .hearts-container {
     display: flex;
@@ -211,7 +227,9 @@ button:active {
     font-size: 26px;
 }
 
-/* PASTEL PIXEL ART */
+/* ========================================
+   PASTEL PIXEL ART
+======================================== */
 
 .cake {
     height: 220px;
@@ -264,7 +282,9 @@ button:active {
     animation: fuego 0.5s infinite alternate;
 }
 
-/* ESTRELLAS DECORATIVAS */
+/* ========================================
+   ESTRELLAS DECORATIVAS
+======================================== */
 
 .stars {
     position: fixed;
@@ -279,7 +299,9 @@ button:active {
     animation: brillar 2s infinite alternate;
 }
 
-/* CONFETI */
+/* ========================================
+   CONFETI
+======================================== */
 
 .confetti {
     position: fixed;
@@ -291,13 +313,82 @@ button:active {
     animation: caer 4s linear forwards;
 }
 
-/* UTILIDADES */
+/* ========================================
+   REPRODUCTOR DE MÚSICA
+======================================== */
+
+.music-player {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+
+    width: 210px;
+    padding: 6px;
+
+    background: #ffe5ec;
+    border: 3px solid var(--oscuro);
+    box-shadow: 4px 4px 0 #b784ad;
+    text-align: center;
+}
+
+.music-player p {
+    margin: 4px 0 8px;
+    font-size: 17px;
+    color: #b45d94;
+}
+
+.music-player iframe {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+/* REPRODUCTOR OCULTO */
+
+.music-player.collapsed {
+    width: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.music-player.collapsed p,
+.music-player.collapsed iframe {
+    display: none;
+}
+
+/* BOTÓN DE MÚSICA */
+
+.music-toggle {
+    display: block;
+    margin: 0 0 8px auto;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    background: #ff8fab;
+    color: white;
+    border: 2px solid var(--oscuro);
+    box-shadow: 3px 3px 0 #b784ad;
+}
+
+.music-player.collapsed .music-toggle {
+    margin: 0;
+}
+
+/* ========================================
+   UTILIDADES
+======================================== */
 
 .hidden {
     display: none !important;
 }
 
-/* ANIMACIONES */
+/* ========================================
+   ANIMACIONES
+======================================== */
 
 @keyframes aparecer {
     from {
@@ -355,9 +446,12 @@ button:active {
     }
 }
 
-/* CELULARES */
+/* ========================================
+   CELULARES
+======================================== */
 
 @media (max-width: 480px) {
+
     .window-content {
         padding: 25px 13px;
     }
@@ -383,7 +477,23 @@ button:active {
     .letter {
         padding: 14px;
     }
+
+    .music-player {
+        top: 8px;
+        right: 8px;
+        width: 210px;
+    }
+
+    .music-player p {
+        font-size: 15px;
+    }
+
+    .music-player iframe {
+        height: 200px;
+    }
 }
+
+/* ACCESIBILIDAD */
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -391,125 +501,3 @@ button:active {
         transition-duration: 0.01ms !important;
     }
 }
-
-
-/* REPRODUCTOR PIXEL ART */
-
-.music-player {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 100;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background: #fff0f5;
-    border: 3px solid #74476a;
-    box-shadow: 4px 4px 0 #b784ad;
-    padding: 8px 12px;
-
-    font-family: "VT323", monospace;
-    font-size: 20px;
-}
-
-.music-player button {
-    margin: 0;
-    padding: 10px;
-    font-size: 9px;
-}
-
-@media (max-width: 480px) {
-    .music-player {
-        top: 8px;
-        right: 8px;
-        font-size: 16px;
-        padding: 5px;
-    }
-}
-
-
-/* REPRODUCTOR FIJO PIXEL ART */
-
-.music-player {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 100;
-
-    width: 230px;
-    padding: 10px;
-
-    background: #ffe5ec;
-    border: 3px solid #74476a;
-    box-shadow: 5px 5px 0 #b784ad;
-    text-align: center;
-}
-
-.music-player p {
-    margin: 0 0 8px;
-    color: #b45d94;
-    font-size: 20px;
-}
-
-.music-player iframe {
-    display: block;
-    width: 100%;
-    height: 200px;
-    border: 0;
-}
-
-@media (max-width: 480px) {
-    .screen {
-        padding-bottom: 270px;
-    }
-
-    .music-player {
-        right: 8px;
-        bottom: 8px;
-        width: 210px;
-    }
-}
-
-/* REPRODUCTOR PEQUEÑO PIXEL ART */
-
-.music-player {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    width: 160px;
-    padding: 7px;
-    z-index: 100;
-
-    background: #ffe5ec;
-    border: 3px solid #74476a;
-    box-shadow: 4px 4px 0 #b784ad;
-    text-align: center;
-}
-
-.music-player p {
-    font-size: 14px;
-    margin: 0 0 6px;
-}
-
-.music-player iframe {
-    display: block;
-    width: 100%;
-    height: 100px;
-    border: none;
-}
-
-/* CELULARES */
-@media (max-width: 480px) {
-    .music-player {
-        width: 150px;
-        right: 10px;
-        bottom: 10px;
-    }
-
-    .music-player iframe {
-        height: 90px;
-    }
-}
-
