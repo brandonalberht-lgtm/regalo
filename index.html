@@ -1,53 +1,71 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Para mi niña ♡</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- FUENTES PIXEL ART -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+
+    <!-- ESTILOS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    
-<!-- MÚSICA PIXEL ART ♡ -->
-<div class="music-player" id="musicPlayer">
+    <!-- =====================================
+         REPRODUCTOR DE MÚSICA PIXEL ART
+    ====================================== -->
 
-    <button
-        class="music-toggle"
-        type="button"
-        onclick="toggleReproductor()">
-        ♫
-    </button>
+    <div class="music-player collapsed" id="musicPlayer">
 
-    <p>♫ Nuestra canción ♡</p>
+        <button
+            class="music-toggle"
+            type="button"
+            onclick="toggleReproductor()"
+            aria-label="Mostrar u ocultar reproductor">
+            ♫
+        </button>
 
-    <iframe
-        src="https://www.youtube.com/embed/UPbTubQqv4g?loop=1&amp;playlist=UPbTubQqv4g"
-        title="Nuestra canción"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-    </iframe>
+        <p>♫ Nuestra canción ♡</p>
 
-</div>
+        <iframe
+            src="https://www.youtube.com/embed/UPbTubQqv4g?loop=1&amp;playlist=UPbTubQqv4g&amp;playsinline=1"
+            title="Nuestra canción ♡"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
 
-</div>
+    </div>
 
 
-</div>
+    <!-- =====================================
+         ESTRELLITAS DECORATIVAS
+    ====================================== -->
 
     <div class="stars" id="stars"></div>
 
-    <!-- PANTALLA DE BIENVENIDA -->
+
+    <!-- =====================================
+         PANTALLA 1: BIENVENIDA
+    ====================================== -->
+
     <section id="inicio" class="screen active">
 
         <div class="window">
@@ -73,15 +91,22 @@
                     ¿Estás lista para descubrirlo?
                 </p>
 
-                <button onclick="mostrarPantalla('carta')">
+                <button
+                    onclick="mostrarPantalla('carta')">
                     COMENZAR ♡
                 </button>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- CARTA -->
+
+    <!-- =====================================
+         PANTALLA 2: CARTA ROMÁNTICA
+    ====================================== -->
+
     <section id="carta" class="screen">
 
         <div class="window">
@@ -95,7 +120,13 @@
 
                 <h2>Tienes una cartita 💌</h2>
 
-                <div class="envelope" onclick="abrirCarta()">
+                <div
+                    class="envelope"
+                    onclick="abrirCarta()"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Abrir carta"
+                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirCarta();}">
                     ✉
                 </div>
 
@@ -135,17 +166,24 @@
 
                     </div>
 
-                    <button onclick="mostrarPantalla('razones')">
+                    <button
+                        onclick="mostrarPantalla('razones')">
                         CONTINUAR ♡
                     </button>
 
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- CORAZONES INTERACTIVOS -->
+
+    <!-- =====================================
+         PANTALLA 3: CINCO RAZONES
+    ====================================== -->
+
     <section id="razones" class="screen">
 
         <div class="window">
@@ -165,20 +203,35 @@
 
                 <div class="hearts-container">
 
-                    <button class="heart-button"
-                        onclick="mostrarRazon(0, this)">♥</button>
+                    <button
+                        class="heart-button"
+                        onclick="mostrarRazon(0, this)">
+                        ♥
+                    </button>
 
-                    <button class="heart-button"
-                        onclick="mostrarRazon(1, this)">♥</button>
+                    <button
+                        class="heart-button"
+                        onclick="mostrarRazon(1, this)">
+                        ♥
+                    </button>
 
-                    <button class="heart-button"
-                        onclick="mostrarRazon(2, this)">♥</button>
+                    <button
+                        class="heart-button"
+                        onclick="mostrarRazon(2, this)">
+                        ♥
+                    </button>
 
-                    <button class="heart-button"
-                        onclick="mostrarRazon(3, this)">♥</button>
+                    <button
+                        class="heart-button"
+                        onclick="mostrarRazon(3, this)">
+                        ♥
+                    </button>
 
-                    <button class="heart-button"
-                        onclick="mostrarRazon(4, this)">♥</button>
+                    <button
+                        class="heart-button"
+                        onclick="mostrarRazon(4, this)">
+                        ♥
+                    </button>
 
                 </div>
 
@@ -186,19 +239,28 @@
                     Cada corazón esconde algo especial.
                 </div>
 
-                <p id="contador">0 / 5 corazones</p>
+                <p id="contador">
+                    0 / 5 corazones
+                </p>
 
-                <button id="btn-final"
+                <button
+                    id="btn-final"
                     class="hidden"
                     onclick="mostrarPantalla('final')">
                     TU SORPRESA FINAL ♡
                 </button>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- CUMPLEAÑOS -->
+
+    <!-- =====================================
+         PANTALLA 4: CUMPLEAÑOS
+    ====================================== -->
+
     <section id="final" class="screen">
 
         <div class="window">
@@ -212,11 +274,20 @@
 
                 <h1>Feliz cumpleaños ♡</h1>
 
+                <!-- PASTEL PIXEL ART -->
                 <div class="cake">
-                    <div class="flame" id="flame"></div>
+
+                    <div
+                        class="flame"
+                        id="flame">
+                    </div>
+
                     <div class="candle"></div>
+
                     <div class="cake-top"></div>
+
                     <div class="cake-bottom"></div>
+
                 </div>
 
                 <p>
@@ -227,7 +298,10 @@
                     SOPLAR VELITA ♡
                 </button>
 
-                <div id="mensaje-final" class="hidden">
+                <!-- MENSAJE FINAL -->
+                <div
+                    id="mensaje-final"
+                    class="hidden">
 
                     <h2>¡Te amo muchísimo! ♡</h2>
 
@@ -248,10 +322,18 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
