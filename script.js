@@ -198,3 +198,25 @@ function reiniciar() {
 
 // Iniciar efectos del fondo
 crearEstrellas();
+
+
+// REPRODUCTOR DE MÚSICA ♡
+
+const musica = document.getElementById("musica");
+const musicBtn = document.getElementById("music-btn");
+
+async function toggleMusica() {
+    if (musica.paused) {
+        try {
+            await musica.play();
+            musicBtn.textContent = "❚❚ PAUSA";
+        } catch (error) {
+            musicBtn.textContent = "▶ PLAY";
+            console.error("No se pudo reproducir:", error);
+        }
+    } else {
+        musica.pause();
+        musicBtn.textContent = "▶ PLAY";
+    }
+}
+
