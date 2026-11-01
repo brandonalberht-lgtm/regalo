@@ -220,3 +220,12 @@ async function toggleMusica() {
     }
 }
 
+
+// Mostrar u ocultar reproductor ♡
+
+function toggleReproductor() {
+    const reproductor =
+        document.getElementById("musicPlayer");
+
+    reproductor.classList.toggle("collapsed");
+}
